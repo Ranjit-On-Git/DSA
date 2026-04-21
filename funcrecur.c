@@ -1,25 +1,27 @@
 #include <stdio.h>
-int fun(int);
+
+void fun(int n);
+
 int main()
 {
     int n;
-    printf("enter a number:");
-    scanf("%d",&n);
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    printf("Recursive Pattern:\n");
     fun(n);
+
     return 0;
 }
-int fun(int n)
+
+void fun(int n)
 {
-    if(n==1)
-    printf("%d\n",n);
-    else
-    {
-    fun(n-1);
-    
-    printf("%d\n",n);
-    
-    fun(n-1);
-    
-   
-    }
+    if (n <= 0)
+        return;
+
+    fun(n - 1);
+
+    printf("%d\n", n);
+
+    fun(n - 1);
 }
